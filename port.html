@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HEDDADJ AMINA HALIMA - Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--rose:#c9748a;--deep-rose:#9a3d55;--petal:#f2c4ce;--blush:#f7e8e8;--cream:#fdf8f5;--text:#3a2328;--light-text:#8a6068}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Jost',sans-serif;background:var(--cream);color:var(--text);overflow-x:hidden}
+nav{position:fixed;top:0;width:100%;z-index:100;display:flex;justify-content:center;gap:2rem;padding:1.1rem 2rem;background:rgba(253,248,245,0.93);backdrop-filter:blur(10px);border-bottom:1px solid #f0dde0}
+nav a{font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--light-text);text-decoration:none;transition:color .3s}
+nav a:hover{color:var(--deep-rose)}
+section{padding:5.5rem 2rem;position:relative;overflow:hidden}
+.section-title{font-family:'Great Vibes',cursive;font-size:clamp(2.8rem,7vw,4.5rem);color:var(--deep-rose);text-align:center;margin-bottom:2.5rem;line-height:1;position:relative;z-index:1}
+.fl{position:absolute;pointer-events:none;z-index:0;mix-blend-mode:multiply;opacity:.55;width:clamp(130px,20vw,200px)}
+.fl img{width:100%;display:block}
+.fl-tr{top:0;right:0}
+.fl-tl{top:0;left:0;transform:scaleX(-1)}
+/* HERO */
+#hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:6rem 2rem 4rem;background:linear-gradient(155deg,#fff5f6 0%,#fdf8f5 55%,#fff0f3 100%);text-align:center}
+.hero-tag{font-size:.72rem;letter-spacing:.25em;text-transform:uppercase;color:var(--rose);margin-bottom:.7rem;animation:fadeUp .7s ease both;position:relative;z-index:1}
+.hero-name{font-family:'Great Vibes',cursive;font-size:clamp(3.2rem,10vw,5rem);color:var(--deep-rose);line-height:1.15;animation:fadeUp .8s .1s ease both;position:relative;z-index:1}
+.hero-word{font-family:'Cormorant Garamond',serif;font-size:clamp(1rem,3.5vw,1.8rem);letter-spacing:.35em;text-transform:uppercase;color:var(--light-text);margin-top:.3rem;animation:fadeUp .8s .2s ease both;position:relative;z-index:1}
+.hero-tagline{margin-top:1.4rem;font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;color:var(--rose);border-top:1px solid var(--petal);border-bottom:1px solid var(--petal);padding:.5rem 1.5rem;animation:fadeUp .8s .3s ease both;position:relative;z-index:1}
+.hero-scroll{position:absolute;bottom:2rem;font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--light-text);animation:bounce 2s infinite;z-index:1}
+/* TWO COL */
+.two-col{display:flex;align-items:center;gap:3rem;max-width:900px;margin:0 auto;position:relative;z-index:1}
+.two-col.reverse{flex-direction:row-reverse}
+.col-text{flex:1}
+.col-img{flex:0 0 260px;max-width:260px}
+.col-img img{width:100%;border-radius:20px;box-shadow:0 10px 40px rgba(154,61,85,.15)}
+/* ABOUT */
+#about{background:#fff8f9}
+#about .col-text p{font-family:'Cormorant Garamond',serif;font-size:1.15rem;line-height:1.9;color:var(--text);font-weight:300}
+#about .section-title{text-align:left}
+.about-divider{width:60px;height:2px;background:linear-gradient(to right,transparent,var(--rose),transparent);margin:1.5rem 0}
+.about-detail{font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;color:var(--light-text)}
+/* SKILLS */
+#skills{background:var(--cream)}
+.skills-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:.9rem;max-width:700px;margin:0 auto;position:relative;z-index:1}
+.skill-pill{font-family:'Cormorant Garamond',serif;font-size:1rem;font-style:italic;color:var(--deep-rose);border:1px solid var(--petal);padding:.45rem 1.3rem;border-radius:50px;background:white;transition:all .3s}
+.skill-pill:hover{background:var(--petal);border-color:var(--rose);transform:translateY(-2px)}
+.skills-category{font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--rose);text-align:center;margin:1.8rem 0 .9rem;width:100%}
+/* PROJECTS */
+#projects{background:#fff8f9}
+.projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:2rem;max-width:860px;margin:0 auto;position:relative;z-index:1}
+.project-card{background:white;border:1px solid #f0dde0;border-radius:16px;padding:2rem 1.8rem;transition:transform .3s,box-shadow .3s}
+.project-card:hover{transfom:translateY(-5px);box-shadow:0 12px 35px rgba(160,73,95,.1)}
+.project-tag{font-size:.65rem;letter-spacing:.2em;text-transform:uppercase;color:var(--rose);margin-bottom:.6rem}
+.project-name{font-family:'Cormorant Garamond',serif;font-size:1.5rem;color:var(--deep-rose);margin-bottom:.7rem;font-weight:600}
+.project-desc{font-size:.85rem;line-height:1.7;color:var(--light-text);margin-bottom:1rem}
+.project-tech{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:1.2rem}
+.tech-badge{font-size:.68rem;background:var(--blush);color:var(--deep-rose);padding:.25rem .7rem;border-radius:50px}
+.project-link{font-size:.72rem;letter-spacing:.15em;text-transform:uppercase;color:var(--rose);text-decoration:none;border-bottom:1px solid var(--petal);padding-bottom:2px;transition:color .3s}
+.project-link:hover{color:var(--deep-rose)}
+/* CERTIFICATIONS */
+#certifications{background:var(--cream)}
+.certs-list{max-width:660px;margin:0 auto;display:flex;flex-direction:column;gap:1.3rem;position:relative;z-index:1}
+.cert-card{background:white;border:1px solid #f0dde0;border-left:4px solid var(--rose);border-radius:10px;padding:1.4rem 1.6rem;display:flex;align-items:flex-start;gap:1rem;cursor:pointer;transition:transform .3s,box-shadow .3s}
+.cert-card:hover{transform:translateX(5px);box-shadow:0 6px 25px rgba(160,73,95,.12)}
+.cert-icon{font-size:1.8rem;flex-shrink:0;margin-top:.1rem}
+.cert-name{font-family:'Cormorant Garamond',serif;font-size:1.15rem;color:var(--deep-rose);font-weight:600;margin-bottom:.25rem}
+.cert-issuer{font-size:.78rem;color:var(--light-text)}
+.cert-date{font-size:.7rem;color:var(--rose);letter-spacing:.1em;margin-top:.3rem;text-transform:uppercase}
+.cert-hint{font-size:.62rem;color:var(--rose);margin-top:.4rem;opacity:.7}
+/* CONTACT */
+#contact{background:linear-gradient(160deg,#fff0f3 0%,#fdf8f5 100%)}
+#contact .section-title{text-align:left}
+.contact-tagline{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-style:italic;color:var(--light-text);margin-bottom:2rem}
+.contact-links{display:flex;flex-wrap:wrap;gap:1rem}
+.contact-btn{font-size:.75rem;letter-spacing:.18em;text-transform:uppercase;text-decoration:none;padding:.75rem 1.8rem;border-radius:50px;transition:all .3s;display:inline-flex;align-items:center;gap:.5rem}
+.contact-btn.primary{background:var(--deep-rose);color:white;border:1px solid var(--deep-rose)}
+.contact-btn.primary:hover{background:#7d2e42}
+.contact-btn.linkedin{background:#0077B5;color:white;border:1px solid #0077B5}
+.contact-btn.linkedin:hover{background:#005f8e}
+.contact-email{margin-top:1.5rem;font-size:.8rem;color:var(--light-text)}
+footer{text-align:center;padding:1.5rem;font-size:.7rem;letter-spacing:.12em;color:var(--light-text);border-top:1px solid #f0dde0}
+/* MODAL */
+#cert-modal{display:none;position:fixed;inset:0;z-index:999;background:rgba(40,15,20,0.85);backdrop-filter:blur(8px);align-items:center;justify-content:center;padding:1.5rem}
+#cert-modal.open{display:flex}
+.modal-inner{position:relative;max-width:850px;width:100%;border-radius:18px;overflow:hidden;box-shadow:0 30px 70px rgba(0,0,0,0.5);animation:modalIn .3s ease}
+.modal-inner img{width:100%;display:block}
+.modal-close{position:absolute;top:.7rem;right:.8rem;background:rgba(255,255,255,0.92);border:none;border-radius:50%;width:2.3rem;height:2.3rem;font-size:1rem;cursor:pointer;color:var(--deep-rose);font-weight:bold}
+.modal-note{position:absolute;bottom:.6rem;left:50%;transform:translateX(-50%);font-size:.62rem;color:rgba(255,255,255,0.5);letter-spacing:.15em;text-transform:uppercase;white-space:nowrap}
+@keyframes modalIn{from{opacity:0;transform:scale(.94)}to{opacity:1;transform:scale(1)}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+@keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(6px)}}
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .7s ease,transform .7s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+@media(max-width:700px){.two-col,.two-col.reverse{flex-direction:column!important;text-align:center}.col-img{max-width:200px;margin:0 auto}#about .section-title,#contact .section-title{text-align:center}.contact-links{justify-content:center}}
+@media(max-width:600px){nav{gap:.8rem}nav a{font-size:.6rem}.projects-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#hero">Home</a>
+  <a href="#about">About</a>
+  <a href="#skills">Skills</a>
+  <a href="#projects">Projects</a>
+  <a href="#certifications">Certificates</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<section id="hero">
+  <div class="fl fl-tr"><img src="flower1.png" alt=""></div>
+  <div class="fl fl-tl"><img src="flower2.png" alt=""></div>
+  <p class="hero-tag">Welcome to my portfolio</p>
+  <h1 class="hero-name">Heddadj Amina Halima</h1>
+  <p class="hero-word">Portfolio</p>
+  <p class="hero-tagline">Web Developer &nbsp;|&nbsp; CS Student &nbsp;|&nbsp; Saida, Algeria</p>
+  <p class="hero-scroll">&#8595; scroll</p>
+</section>
+
+<section id="about">
+  <div class="fl fl-tr"><img src="flower2.png" alt=""></div>
+  <div class="two-col reveal">
+    <div class="col-text">
+      <h2 class="section-title">About Me</h2>
+      <p>I am a second-year Computer Science student at Dr. Moulay Tahar University of Saida, with a growing passion for Web Development. I build frontend interfaces using HTML, CSS, and JavaScript, and bring real-world experience from my time as an Administrative &amp; Accounting Assistant.</p>
+      <div class="about-divider"></div>
+      <p class="about-detail">Active Member &middot; Computer Science Students Club &middot; University of Saida</p>
+    </div>
+    <div class="col-img">
+      <img src="about.jpg" alt="Amina" onerror="this.style.display='none'">
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="fl fl-tl"><img src="flower1.png" alt=""></div>
+  <h2 class="section-title reveal">My Skills</h2>
+  <div class="skills-grid reveal">
+    <span class="skills-category">Technical</span>
+    <span class="skill-pill">HTML</span>
+    <span class="skill-pill">CSS</span>
+    <span class="skill-pill">JavaScript</span>
+    <span class="skill-pill">Python</span>
+    <span class="skill-pill">Problem Solving</span>
+    <span class="skills-category">Professional</span>
+    <span class="skill-pill">Data Entry</span>
+    <span class="skill-pill">Administrative Support</span>
+    <span class="skill-pill">Customer Service</span>
+    <span class="skill-pill">Teamwork</span>
+    <span class="skill-pill">Attention to Detail</span>
+    <span class="skills-category">Languages</span>
+    <span class="skill-pill">Arabic &mdash; Native</span>
+    <span class="skill-pill">English &mdash; Intermediate</span>
+    <span class="skill-pill">French &mdash; Intermediate</span>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="fl fl-tr"><img src="flower1.png" alt=""></div>
+  <h2 class="section-title reveal">My Projects</h2>
+  <div class="projects-grid">
+    <div class="project-card reveal">
+      <p class="project-tag">Store Website</p>
+      <h3 class="project-name">Madina Facilite</h3>
+      <p class="project-desc">A business website designed and built for a local installment sales store. Includes the company logo, promotional video, address, phone numbers, and Facebook page link.</p>
+      <div class="project-tech"><span class="tech-badge">HTML</span><span class="tech-badge">CSS</span></div>
+      <a class="project-link" href="https://aminaheddadj46-droid.github.io/ficilite-madina/" target="_blank">View Live &#8599;</a>
+    </div>
+    <div class="project-card reveal">
+      <p class="project-tag">Personal Portfolio</p>
+      <h3 class="project-name">Portfolio Website</h3>
+      <p class="project-desc">A personal portfolio website showcasing skills, projects, and contact information. Features navigation, skills section, projects section, and social media links.</p>
+      <div class="project-tech"><span class="tech-badge">HTML</span><span class="tech-badge">CSS</span><span class="tech-badge">JavaScript</span></div>
+      <a class="project-link" href="https://heddadj-amina-halima.netlify.app/" target="_blank">View Live &#8599;</a>
+    </div>
+  </div>
+</section>
+
+<section id="certifications">
+  <div class="fl fl-tl"><img src="flower2.png" alt=""></div>
+  <h2 class="section-title reveal">Certifications</h2>
+  <div class="certs-list">
+    <div class="cert-card reveal" onclick="openCert('hcia.png')">
+      <span class="cert-icon">&#128737;</span>
+      <div>
+        <p class="cert-name">HCIA-Security V4.0 Course</p>
+        <p class="cert-issuer">Huawei ICT Academy &middot; Code: EBG20260328019860</p>
+        <p class="cert-date">March 2026</p>
+        <p class="cert-hint">&#128247; Click to view certificate</p>
+      </div>
+    </div>
+    <div class="cert-card reveal" onclick="openCert('python.jpg')">
+      <span class="cert-icon">&#128013;</span>
+      <div>
+        <p class="cert-name">Python Basics Workshop</p>
+        <p class="cert-issuer">Computer Science Students Club &mdash; University of Saida</p>
+        <p class="cert-date">February 2026</p>
+        <p class="cert-hint">&#128247; Click to view certificate</p>
+      </div>
+    </div>
+    <div class="cert-card reveal" onclick="openCert('ai.jpg')">
+      <span class="cert-icon">&#128161;</span>
+      <div>
+        <p class="cert-name">Launch Your Financial Project By AI</p>
+        <p class="cert-issuer">Alhababi Business for E-Services &amp; Entrepreneurship &mdash; UK</p>
+        <p class="cert-date">March 2026 &middot; 3 training hours</p>
+        <p class="cert-hint">&#128247; Click to view certificate</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="fl fl-tr"><img src="flower1.png" alt=""></div>
+  <div class="two-col reveal">
+    <div class="col-text">
+      <h2 class="section-title">Let's Connect!</h2>
+      <p class="contact-tagline">Feel free to reach out &mdash; I'd love to collaborate.</p>
+      <div class="contact-links">
+        <a class="contact-btn primary" href="mailto:aminaheddadj46@gmail.com">&#9993; Send Email</a>
+        <a class="contact-btn linkedin" href="https://www.linkedin.com/in/heddadj-amina-6214b4399" target="_blank">in &nbsp;LinkedIn</a>
+      </div>
+      <p class="contact-email">aminaheddadj46@gmail.com</p>
+    </div>
+    <div class="col-img">
+      <img src="contact.jpg" alt="" onerror="this.style.display='none'">
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>&copy; 2026 Heddadj Amina Halima &nbsp;&middot;&nbsp; Designed with &#127800;</p>
+</footer>
+
+<div id="cert-modal" onclick="closeCert()">
+  <div class="modal-inner" onclick="event.stopPropagation()">
+    <img id="modal-img" src="" alt="Certificate">
+    <button class="modal-close" onclick="closeCert()">&#10005;</button>
+    <span class="modal-note">tap outside to close</span>
+  </div>
+</div>
+
+<script>
+function openCert(f){
+  document.getElementById('modal-img').src=f;
+  document.getElementById('cert-modal').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function closeCert(){
+  document.getElementById('cert-modal').classList.remove('open');
+  document.body.style.overflow='';
+}
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeCert();});
+var reveals=document.querySelectorAll('.reveal');
+var obs=new IntersectionObserver(function(entries){
+  entries.forEach(function(e,i){
+    if(e.isIntersecting){setTimeout(function(){e.target.classList.add('visible');},i*80);obs.unobserve(e.target);}
+  });
+},{threshold:0.12});
+reveals.forEach(function(r){obs.observe(r);});
+</script>
+</body>
+</html>
+
